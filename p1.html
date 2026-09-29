@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bad Ideas for Bad Television Shows - Vertical Poster</title>
+  <style>
+    /* Print setup for exactly 12 in x 18 in */
+    @page {
+      size: 12in 18in;
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 12in;
+      height: 18in;
+      background-color: #121212;
+      color: #ffffff;
+      font-family: 'Impact', 'Arial Black', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2in 1in;
+      text-align: center;
+      -webkit-print-color-adjust: exact;
+    }
+
+    /* Container for layout balance */
+    .header, .title-section, .footer {
+      width: 100%;
+    }
+
+    /* Presenter */
+    .presenter {
+      font-family: 'Arial', sans-serif;
+      font-size: 28pt;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #ffd700;
+      margin-bottom: 0.5in;
+    }
+
+    /* Main Title */
+    .title {
+      font-size: 80pt;
+      line-height: 0.95;
+      text-transform: uppercase;
+      color: #ff3366;
+      text-shadow: 4px 4px 0px #ffffff;
+      margin-bottom: 0.4in;
+    }
+
+    /* Playwright Credit */
+    .playwright {
+      font-family: 'Arial', sans-serif;
+      font-size: 32pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #ffffff;
+      border-top: 4px solid #ffd700;
+      border-bottom: 4px solid #ffd700;
+      padding: 0.2in 0;
+      margin: 0 auto;
+      width: 80%;
+    }
+
+    /* Graphic/Decorative Accent */
+    .graphic-accent {
+      font-size: 100pt;
+      margin: 0.5in 0;
+      line-height: 1;
+    }
+
+    /* Dates and Times */
+    .showtimes {
+      background-color: #ffd700;
+      color: #121212;
+      padding: 0.4in 0.3in;
+      border-radius: 12px;
+    }
+
+    .showtimes h2 {
+      font-family: 'Arial', sans-serif;
+      font-size: 22pt;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 0.2in;
+    }
+
+    .showtimes ul {
+      list-style: none;
+    }
+
+    .showtimes li {
+      font-size: 28pt;
+      line-height: 1.4;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="presenter">Westridge Theatre Presents</div>
+  </div>
+
+  <div class="title-section">
+    <h1 class="title">Bad Ideas<br>for Bad<br>Television<br>Shows</h1>
+    <div class="playwright">A Play By Don Zolidis</div>
+  </div>
+
+  <div class="graphic-accent">
+    📺
+  </div>
+
+  <div class="footer">
+    <div class="showtimes">
+      <ul>
+        <li>Saturday, November 14 @ 2 pm</li>
+        <li>Monday, November 16 @ 7 pm</li>
+        <li>Tuesday, November 17 @ 7 pm</li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>
