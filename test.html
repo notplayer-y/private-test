@@ -1,0 +1,1124 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>United States of Favorites - Island Presentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+/* 1. CORE SETUP & RESET */
+
+⚬ {
+box-sizing: border-box;
+}
+
+body {
+background-color: #0f172a;
+display: grid;
+gap: 24px;
+grid-template-columns: 1fr;
+margin: 0;
+min-height: 100vh;
+padding: 24px 0;
+place-items: center;
+font-family: 'Inter', sans-serif;
+color: #334155;
+}
+
+p {
+margin: 0 0 12px 0;
+}
+
+/* Slide Container setup for 16:9 ratio (1280x720) */
+.slide-container {
+align-items: flex-start;
+background-color: #ffffff;
+border-radius: 12px;
+box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+display: flex;
+flex-direction: column;
+height: 720px;
+justify-content: flex-start;
+overflow: hidden;
+padding: 50px 60px;
+position: relative;
+width: 1280px;
+}
+
+.slide-container::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 8px;
+background: linear-gradient(90deg, #0284c7, #06b6d4, #10b981);
+z-index: 10;
+}
+
+.slide-container > * {
+position: relative;
+z-index: 1;
+}
+
+/* 2. TYPOGRAPHY & HEADINGS */
+.slide-container h1,
+.slide-container h2,
+.slide-container h3 {
+font-family: 'Montserrat', sans-serif;
+color: #0f172a;
+margin: 0;
+}
+
+.slide-container h1 {
+font-size: 64px;
+font-weight: 800;
+letter-spacing: -1px;
+line-height: 1.1;
+}
+
+.slide-container .slide-title {
+font-size: 36px;
+font-weight: 700;
+margin-bottom: 24px;
+color: #0369a1;
+width: 100%;
+text-align: left;
+border-bottom: 2px solid #e0f2fe;
+padding-bottom: 12px;
+}
+
+.slide-container h3 {
+font-size: 22px;
+font-weight: 700;
+margin-bottom: 10px;
+color: #0f172a;
+}
+
+.slide-container p,
+.slide-container li,
+.slide-container .subtitle {
+font-size: 16px;
+line-height: 1.6;
+color: #475569;
+}
+
+.slide-container .subtitle {
+font-size: 22px;
+color: #0369a1;
+font-weight: 500;
+margin-top: 16px;
+max-width: 900px;
+}
+
+/* 3. CONTENT AREA WRAPPER */
+.content-area {
+align-items: center;
+display: flex;
+flex-direction: column;
+flex-grow: 1;
+justify-content: center;
+width: 100%;
+}
+
+/* 4. LAYOUT DESIGNS */
+
+/* Title Layout */
+.title-layout {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+height: 100%;
+width: 100%;
+background: radial-gradient(circle at 50% 40%, #f0f9ff 0%, #ffffff 70%);
+}
+
+.title-layout .badge {
+background-color: #e0f2fe;
+color: #0284c7;
+font-weight: 700;
+font-size: 14px;
+letter-spacing: 2px;
+text-transform: uppercase;
+padding: 8px 20px;
+border-radius: 20px;
+margin-bottom: 24px;
+}
+
+/* Section Title Layout */
+.section-title-layout {
+align-items: center;
+display: flex;
+flex-direction: column;
+height: 100%;
+justify-content: center;
+text-align: center;
+width: 100%;
+}
+
+.section-title-layout h2 {
+font-size: 52px;
+color: #0f172a;
+font-weight: 800;
+}
+
+.section-title-layout hr {
+background: linear-gradient(90deg, #0284c7, #06b6d4);
+border: none;
+height: 6px;
+border-radius: 3px;
+margin: 24px auto;
+width: 120px;
+}
+
+.section-title-layout p {
+font-size: 20px;
+color: #64748b;
+max-width: 750px;
+}
+
+/* Two Column Layout */
+.two-column {
+align-items: center;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 40px;
+width: 100%;
+}
+
+.two-column.tiled {
+align-items: stretch;
+}
+
+.two-column.tiled > div {
+background-color: #f8fafc;
+border-radius: 12px;
+border: 1px solid #e2e8f0;
+padding: 32px;
+}
+
+.two-column.tiled h3 {
+color: #0284c7;
+}
+
+.image-wrapper {
+border-radius: 12px;
+height: 380px;
+overflow: hidden;
+width: 100%;
+box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.image-wrapper img {
+height: 100%;
+width: 100%;
+object-fit: cover;
+}
+
+.two-column .image-wrapper img {
+object-fit: contain;
+background-color: #f0f9ff;
+}
+
+/* Tiled Content Layout */
+.tiled-content {
+align-items: stretch;
+display: flex;
+gap: 24px;
+justify-content: center;
+width: 100%;
+}
+
+.tile {
+background-color: #f8fafc;
+border-radius: 12px;
+border: 1px solid #e2e8f0;
+display: flex;
+flex-direction: column;
+flex: 1;
+padding: 28px;
+text-align: left;
+transition: transform 0.2s ease;
+}
+
+.tile .icon {
+color: #0284c7;
+font-size: 36px;
+margin-bottom: 16px;
+background-color: #e0f2fe;
+width: 64px;
+height: 64px;
+border-radius: 12px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+/* Highlighted Numbers */
+.highlight-numbers-layout {
+align-items: center;
+}
+
+.highlight-numbers-layout .stat-card {
+background: linear-gradient(135deg, #0284c7, #0369a1);
+border-radius: 16px;
+padding: 40px;
+color: white;
+text-align: center;
+box-shadow: 0 10px 20px rgba(2, 132, 199, 0.2);
+}
+
+.highlight-numbers-layout .number {
+color: #ffffff;
+font-size: 110px;
+font-weight: 800;
+font-family: 'Montserrat', sans-serif;
+line-height: 1;
+}
+
+.highlight-numbers-layout .number-label {
+font-size: 22px;
+font-weight: 600;
+color: #e0f2fe;
+margin-top: 10px;
+}
+
+/* Bullet List */
+.bullet-list {
+width: 100%;
+}
+
+.bullet-list ul {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+.bullet-list li {
+margin-bottom: 20px;
+padding-left: 48px;
+position: relative;
+font-size: 17px;
+}
+
+.bullet-list i {
+color: #0284c7;
+font-size: 22px;
+left: 0;
+top: 2px;
+position: absolute;
+background-color: #e0f2fe;
+width: 34px;
+height: 34px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.bullet-list li strong {
+color: #0f172a;
+}
+
+/* Table Layout */
+.table-layout {
+width: 100%;
+}
+
+.table-layout table {
+border-collapse: separate;
+border-spacing: 0;
+width: 100%;
+border-radius: 8px;
+overflow: hidden;
+border: 1px solid #e2e8f0;
+}
+
+.table-layout th,
+.table-layout td {
+padding: 16px 20px;
+text-align: left;
+}
+
+.table-layout th {
+background-color: #0f172a;
+color: #ffffff;
+font-size: 16px;
+font-weight: 700;
+font-family: 'Montserrat', sans-serif;
+}
+
+.table-layout tr:nth-child(even) {
+background-color: #f8fafc;
+}
+
+.table-layout td {
+border-bottom: 1px solid #e2e8f0;
+font-size: 15px;
+}
+
+/* Bar Chart */
+.chart-container {
+display: flex;
+flex-direction: column;
+gap: 16px;
+width: 100%;
+}
+
+.bar {
+align-items: center;
+display: flex;
+gap: 20px;
+}
+
+.bar .label {
+color: #0f172a;
+flex: 0 0 180px;
+font-weight: 700;
+text-align: right;
+font-size: 16px;
+}
+
+.bar .bar-inner {
+background-color: #f1f5f9;
+border-radius: 8px;
+flex-grow: 1;
+height: 40px;
+overflow: hidden;
+}
+
+.bar .bar-fill {
+align-items: center;
+border-radius: 8px;
+color: white;
+display: flex;
+font-size: 15px;
+font-weight: 700;
+height: 100%;
+justify-content: flex-end;
+padding-right: 15px;
+}
+
+.chart-summary {
+background-color: #f0f9ff;
+border-left: 4px solid #0284c7;
+padding: 12px 20px;
+margin-top: 24px;
+border-radius: 0 8px 8px 0;
+font-size: 15px;
+color: #0369a1;
+width: 100%;
+}
+
+/* Timeline Layout */
+.timeline-layout {
+align-items: stretch;
+display: flex;
+height: 320px;
+justify-content: space-between;
+position: relative;
+width: 100%;
+margin-top: 40px;
+}
+
+.timeline-layout .timeline-line {
+background-color: #cbd5e1;
+height: 4px;
+left: 0;
+position: absolute;
+top: 50%;
+transform: translateY(-2px);
+width: 100%;
+z-index: 0;
+}
+
+.timeline-item {
+position: relative;
+text-align: center;
+width: 22%;
+}
+
+.timeline-item::after {
+background-color: #ffffff;
+border-radius: 50%;
+border: 4px solid #0284c7;
+content: '';
+height: 20px;
+left: 50%;
+position: absolute;
+top: 50%;
+transform: translate(-50%, -50%);
+width: 20px;
+z-index: 1;
+}
+
+.timeline-item .content-wrapper {
+left: 0;
+position: absolute;
+width: 100%;
+background-color: #f8fafc;
+border: 1px solid #e2e8f0;
+padding: 16px;
+border-radius: 10px;
+}
+
+.timeline-item:nth-child(odd) .content-wrapper {
+bottom: 50%;
+margin-bottom: 24px;
+}
+
+.timeline-item:nth-child(even) .content-wrapper {
+top: 50%;
+margin-top: 24px;
+}
+
+.timeline-item h3 {
+color: #0284c7;
+font-size: 18px;
+margin-bottom: 6px;
+}
+
+.timeline-item p {
+font-size: 13px;
+margin: 0;
+line-height: 1.4;
+}
+
+/* Full Background Image */
+.full-bg-image {
+background-position: center;
+background-size: cover;
+padding: 0;
+}
+
+.full-bg-overlay {
+background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(3, 105, 161, 0.7) 100%);
+width: 100%;
+height: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 60px;
+text-align: center;
+}
+
+.full-bg-overlay h2 {
+color: #ffffff;
+font-size: 54px;
+margin-bottom: 20px;
+}
+
+.full-bg-overlay p {
+color: #e0f2fe;
+font-size: 22px;
+max-width: 800px;
+line-height: 1.6;
+}
+
+/* Q&A Layout */
+.qa-layout {
+margin: 0 auto;
+text-align: center;
+width: 100%;
+}
+
+.qa-layout h2 {
+font-size: 72px;
+color: #0f172a;
+margin-bottom: 16px;
+}
+
+.qa-layout p {
+font-size: 24px;
+color: #0284c7;
+font-weight: 500;
+}
+
+.qa-layout .team-box {
+background-color: #f8fafc;
+border: 1px solid #e2e8f0;
+border-radius: 12px;
+padding: 24px 40px;
+margin-top: 40px;
+display: inline-block;
+}
+
+.qa-layout .team-title {
+font-size: 14px;
+text-transform: uppercase;
+letter-spacing: 1.5px;
+color: #64748b;
+font-weight: 700;
+margin-bottom: 8px;
+}
+</style>
+<style>
+.lms-source-label {
+position: absolute;
+top: 8px;
+right: 8px;
+background-color: #e0e0e0;
+color: #333333;
+border-radius: 10px;
+padding: 4px 4px;
+font-family: sans-serif;
+font-size: 10px;
+pointer-events: none;
+font-weight: 500;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+</style><style>
+:where(.slide-attributions) {
+padding: 60px;
+}
+.attribution-list {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+.attribution-list__item {
+align-items: center;
+border-bottom: 1px solid #757575;
+display: grid;
+gap: 25px;
+grid-template-columns: 90px 1fr;
+padding: 15px 0;
+margin: 0 !important;
+}
+.attribution-list__item::before {
+display: none;
+}
+.attribution-list__item::after {
+display: none;
+}
+.attribution-list__item:last-child {
+border-bottom: none;
+}
+.attribution-list__item .attribution__thumbnail {
+height: 50px;
+width: 90px;
+}
+.attribution__thumbnail .attribution__thumbnail__image {
+border-radius: 8px;
+height: 100%;
+object-fit: cover;
+width: 100%;
+}
+.attribution__details {
+display: flex;
+flex-direction: column;
+gap: 5px;
+}
+.attribution__details .attribution__raw-url {
+color: inherit;
+font-size: 13px;
+margin: 0;
+word-break: break-all;
+}
+.attribution__details .attribution__title {
+color: inherit;
+font-size: 16px;
+margin: 0;
+}
+.attribution__details .attribution__title > .attribution__link {
+color: #4f46e5;
+text-decoration: none;
+}
+</style><style>
+/* The container that fills available space. It's the positioning context. /
+#slideshow-holder {
+width: 100%;
+position: relative;
+flex-grow: 1; / Replaces flex-grow Tailwind class for clarity /
+overflow: hidden;
+padding: 1rem; / Replaces p-4 Tailwind class */
+}
+
+/* UI controls should not be text-selectable. */
+#nav-controls.select-none,
+#theme-toggle.select-none {
+user-select: none;
+-webkit-user-select: none;
+}
+
+/* The element that is scaled and centered. /
+#slideshow-wrapper {
+width: 1280px;
+height: 720px;
+position: absolute;
+top: 50%;
+left: 50%;
+transform-origin: center;
+transform: translate(-50%, -50%) scale(var(--scale-factor, 1));
+transition: transform 0.3s ease-in-out;
+/ Visual styles moved here from the holder */
+border-radius: 0.5rem;
+box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+overflow: hidden;
+}
+
+/* Update slide container styles */
+.slide-container {
+width: 100%;
+height: 100%;
+overflow: hidden;
+position: absolute;
+top: 0;
+left: 0;
+opacity: 0;
+pointer-events: none;
+transition: opacity 0.5s ease-in-out;
+}
+
+/* Make the active slide visible */
+.slide-container.active {
+opacity: 1;
+pointer-events: auto;
+}
+</style><script src="https://cdn.tailwindcss.com/3.4.17"></script><script>
+tailwind.config = {
+darkMode: 'class',
+corePlugins: {
+preflight: false,
+},
+}
+</script></head>
+<body class="bg-gray-100 dark:bg-gray-900 flex flex-col h-screen transition-colors duration-300">
+
+<!-- Slide 1: Title Slide -->
+
+<!-- Slide 2: Section Title -->
+
+<!-- Slide 3: Geographic Features & Climate -->
+
+<!-- Slide 4: Governance & Constitutional Laws -->
+
+<!-- Slide 5: Key Demographics & Statistics -->
+
+<!-- Slide 6: Economic Pillars & Industries -->
+
+<!-- Slide 7: Regional Overview & Provinces -->
+
+<!-- Slide 8: Clean Energy Production Mix -->
+
+<!-- Slide 9: Culture, Customs & Traditions -->
+
+<!-- Slide 10: Historical Growth Timeline -->
+
+<!-- Slide 11: Full Background Image -->
+
+<!-- Slide 12: Q&A -->
+
+<button id="theme-toggle" class="select-none absolute top-4 right-4 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm p-2 rounded-full shadow-md text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-all duration-300 z-20 border-none leading-[0] cursor-pointer">
+<svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 -960 960 960"><path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"></path></svg>
+</button>
+
+<div id="nav-controls" class="select-none relative flex-shrink-0 w-full flex justify-center items-center p-4">
+<span id="slide-counter" class="absolute left-4 top-1/2 -translate-y-1/2 text-sm font-medium text-gray-600 dark:text-gray-400 font-sans"></span>
+<div class="flex items-center space-x-2">
+<button id="prev-slide" class="bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 p-2 rounded-md transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-md border-none leading-[0] cursor-pointer">
+<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
+</button>
+<button id="next-slide" class="bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 p-2 rounded-md transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-md border-none leading-[0] cursor-pointer">
+<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
+</button>
+</div>
+</div>
+
+<div id="slideshow-holder"><div id="slideshow-wrapper"><div class="slide-container" id="slide1">
+<div class="title-layout">
+<div class="badge">Geography & Civics Presentation</div>
+<h1>United States of Favorites</h1>
+<p class="subtitle">A Custom Island Nation Built on Our Team's Favorite Passions, Features, and Values</p>
+</div>
+</div><div class="slide-container" id="slide2">
+<div class="section-title-layout">
+<h2>Part 1: Geography & Origin</h2>
+<hr>
+<p>Exploring the unique location, climate, and topography that make our island nation standard-setting and self-sufficient.</p>
+</div>
+</div><div class="slide-container" id="slide3">
+<h2 class="slide-title">Geographic Features & Climate</h2>
+<div class="content-area">
+<div class="two-column">
+<div>
+<h3>An Ideal Island Sanctuary</h3>
+<p>Located in the warm subtropical Pacific waters, the island was formed by extinct volcanic activity, yielding rich soil and vibrant marine ecosystems.</p>
+<p><strong>Key Geographic Highlights:</strong></p>
+<ul>
+<li><strong>Mount Apex:</strong> Central elevation providing natural freshwater aquifers.</li>
+<li><strong>Emerald Lagoon:</strong> Protected natural harbor for ocean transport.</li>
+<li><strong>Climate:</strong> Year-round 78°F (25°C) average temperature with refreshing coastal breezes.</li>
+</ul>
+</div>
+<div>
+<div class="image-wrapper">
+<img src="https://images.presentationgo.com/2025/09/tropical-island-aerial-view.jpg" alt="Aerial view map of tropical island with turquoise ocean">
+</div>
+</div>
+</div>
+</div>
+</div><div class="slide-container" id="slide4">
+<h2 class="slide-title">Governance & Fundamental Laws</h2>
+<div class="content-area">
+<div class="two-column tiled">
+<div>
+<h3>Democratic Innovation Council</h3>
+<p>Our government is organized into an elected 5-person council representing each major island sector, ensuring all citizen priorities are heard and implemented transparently.</p>
+</div>
+<div>
+<h3>Top 3 National Laws</h3>
+<p><strong>1. Universal Favorite Access:</strong> Every resident is granted free daily time to pursue personal hobbies and passions.</p>
+<p><strong>2. Eco Preservation Act:</strong> Zero waste dumping; 100% recyclable or compostable materials only.</p>
+<p><strong>3. Community Harmony Charter:</strong> Weekly island-wide gathering to celebrate achievements and arts.</p>
+</div>
+</div>
+</div>
+</div><div class="slide-container" id="slide5">
+<h2 class="slide-title">Key Demographics & Vital Stats</h2>
+<div class="content-area">
+<div class="two-column highlight-numbers-layout">
+<div>
+<div class="stat-card">
+<div class="number">250K</div>
+<div class="number-label">Happy Citizens</div>
+</div>
+</div>
+<div>
+<h3>Small Scale, Massive Quality of Life</h3>
+<p>Designed thoughtfully to avoid overcrowding, our population of 250,000 live across four distinct, eco-designed urban districts.</p>
+<p>With a 99.8% literacy rate and a 100% employment guarantee through civic service and community programs, the island sets a global standard for human development.</p>
+</div>
+</div>
+</div>
+</div><div class="slide-container" id="slide6">
+<h2 class="slide-title">Economic Pillars & Innovations</h2>
+<div class="content-area">
+<div class="tiled-content">
+<div class="tile">
+<div class="icon"><i class="fa-solid fa-umbrella-beach"></i></div>
+<h3>Eco-Tourism</h3>
+<p>Sustainable, low-impact luxury travel focused on pristine coral reefs, rainforest canopy walks, and wellness retreats.</p>
+</div>
+<div class="tile">
+<div class="icon"><i class="fa-solid fa-microchip"></i></div>
+<h3>Clean Tech R&D</h3>
+<p>Leading global research in ocean thermal energy, wave technology, and high-efficiency solar integration.</p>
+</div>
+<div class="tile">
+<div class="icon"><i class="fa-solid fa-seedling"></i></div>
+<h3>Agri-Tech</h3>
+<p>Vertical hydroponic farming producing organic tropical fruits, spices, and seafood for full food independence.</p>
+</div>
+</div>
+</div>
+</div><div class="slide-container" id="slide7">
+<h2 class="slide-title">Regional Overview & Provinces</h2>
+<div class="content-area">
+<div class="table-layout">
+<table>
+<thead>
+<tr>
+<th>Province Name</th>
+<th>Primary Focus</th>
+<th>Landmark Feature</th>
+<th>Population Share</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Central Capital (Favorita)</strong></td>
+<td>Government, Arts & Commerce</td>
+<td>Unity Plaza & Grand Amphitheater</td>
+<td>35%</td>
+</tr>
+<tr>
+<td><strong>Sunshine Bay</strong></td>
+<td>Recreation, Beach & Tourism</td>
+<td>Coral Marine Reserve</td>
+<td>25%</td>
+</tr>
+<tr>
+<td><strong>Eco Ridge</strong></td>
+<td>Agriculture, Forestry & Solar</td>
+<td>Mountain Hydro Springs</td>
+<td>20%</td>
+</tr>
+<tr>
+<td><strong>Innovate Harbor</strong></td>
+<td>Technology, Education & Port</td>
+<td>Ocean Tech Research Hub</td>
+<td>20%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div><div class="slide-container" id="slide8">
+<h2 class="slide-title">Clean Energy Production Mix</h2>
+<div class="content-area">
+<div class="chart-container">
+<div class="bar">
+<div class="label">Solar Power</div>
+<div class="bar-inner"><div class="bar-fill" style="width: 45%; background: linear-gradient(90deg, #38bdf8, #0284c7);">45%</div></div>
+</div>
+<div class="bar">
+<div class="label">Wave & Tidal</div>
+<div class="bar-inner"><div class="bar-fill" style="width: 30%; background: linear-gradient(90deg, #34d399, #059669);">30%</div></div>
+</div>
+<div class="bar">
+<div class="label">Wind Energy</div>
+<div class="bar-inner"><div class="bar-fill" style="width: 15%; background: linear-gradient(90deg, #fbbf24, #d97706);">15%</div></div>
+</div>
+<div class="bar">
+<div class="label">Geothermal</div>
+<div class="bar-inner"><div class="bar-fill" style="width: 10%; background: linear-gradient(90deg, #a78bfa, #7c3aed);">10%</div></div>
+</div>
+</div>
+<div class="chart-summary">
+The United States of Favorites produces 100% of its electrical power from zero-carbon renewable sources, storing excess grid energy in advanced battery facilities.
+</div>
+</div>
+</div><div class="slide-container" id="slide9">
+<h2 class="slide-title">Culture, Customs & Traditions</h2>
+<div class="content-area">
+<div class="bullet-list">
+<ul>
+<li>
+<i class="fa-solid fa-star"></i>
+<strong>National Favorite Day:</strong> An annual month-end festival where citizens share their favorite creations, recipes, and music.
+</li>
+<li>
+<i class="fa-solid fa-utensils"></i>
+<strong>Official Island Cuisine:</strong> A fusion of fresh tropical fruits, grilled catch-of-the-day, and coconut spices.
+</li>
+<li>
+<i class="fa-solid fa-volleyball"></i>
+<strong>State Sport:</strong> Lagoon Volleyball – played in shallow reef waters, promoting teamwork and friendly competition.
+</li>
+<li>
+<i class="fa-solid fa-hand-holding-heart"></i>
+<strong>Community Pledge:</strong> "Protect what you love, share what you favor."
+</li>
+</ul>
+</div>
+</div>
+</div><div class="slide-container" id="slide10">
+<h2 class="slide-title">Historical Growth Timeline</h2>
+<div class="content-area">
+<div class="timeline-layout">
+<div class="timeline-line"></div>
+<div class="timeline-item">
+<div class="content-wrapper">
+<h3>Year 1: Discovery</h3>
+<p>Island mapped by student explorers & initial settlement plan established.</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="content-wrapper">
+<h3>Year 3: Charter</h3>
+<p>The Constitution of Favorites ratified by popular vote.</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="content-wrapper">
+<h3>Year 5: Green Grid</h3>
+<p>100% renewable energy conversion completed ahead of schedule.</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="content-wrapper">
+<h3>Year 10: Today</h3>
+<p>Recognized globally as a beacon of sustainability and joy.</p>
+</div>
+</div>
+</div>
+</div>
+</div><div class="slide-container full-bg-image" id="slide11" style="background-image: url(&#39;https://www.asiarealestatesummit.com/wp-content/uploads/2025/07/1-scaled.webp&#39;);">
+<div class="full-bg-overlay">
+<h2>Future Horizon & Vision</h2>
+<p>Our long-term commitment is to serve as an international model for living in balance with nature, prioritizing human happiness, and celebrating shared favorites for generations to come.</p>
+</div>
+</div><div class="slide-container" id="slide18">
+<div class="qa-layout">
+<h2>Thank You!</h2>
+<p>Welcome to the United States of Favorites</p>
+<div class="team-box">
+<div class="team-title">Presented by Your Project Team</div>
+<p style="margin: 0; font-size: 16px; color: #334155;">Questions, Suggestions & Class Discussion</p>
+</div>
+</div>
+</div><div class="slide-container slide-attributions" id="slide-attributions-1"><h2 class="slide-title">Image Sources</h2><div class="content-area"><ul class="attribution-list"><li class="attribution-list__item"><div class="attribution__thumbnail"><img class="attribution__thumbnail__image" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSCTMPhq2wEztX8WRKWhbzISTLyaf8y3aRT7DFlqGWBniJpYiOISfcbnqXpjpY9" alt="Thumbnail for www.presentationgo.com"></div><div class="attribution__details"><p class="attribution__raw-url">https://images.presentationgo.com/2025/09/tropical-island-aerial-view.jpg</p><p class="attribution__title">Source: <a href="https://www.presentationgo.com/presentation/tropical-island-aerial-view-2/" target="_blank" class="attribution__link">www.presentationgo.com</a></p></div></li><li class="attribution-list__item"><div class="attribution__thumbnail"><img class="attribution__thumbnail__image" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSNAlOA8cON12yEh24eBIh1iYdM4Zk-PwY7n2aN_aqNrbNkg0iY0botx7vKMGlp" alt="Thumbnail for www.asiarealestatesummit.com"></div><div class="attribution__details"><p class="attribution__raw-url">https://www.asiarealestatesummit.com/wp-content/uploads/2025/07/1-scaled.webp</p><p class="attribution__title">Source: <a href="https://www.asiarealestatesummit.com/6-green-real-estate-projects-reshaping-asias-future/" target="_blank" class="attribution__link">www.asiarealestatesummit.com</a></p></div></li></ul></div></div></div></div><script>
+/
+
+⚬ Fetches an image blob using a method that attempts to bypass CORS issues
+
+⚬ by adding 'alr=yes' to the URL and following redirects.
+*/
+async function fetchFifeImageBlobUsingAlr(urlString) {
+if (urlString.startsWith('blob:') || urlString.startsWith('data:')) {
+throw new Error('Input URL is already a blob or data URL.');
+}
+let url = new URL(urlString, window.location.href);
+url.searchParams.set('alr', 'yes');
+for (let i = 0; i < 5; i++) {
+const response = await fetch(url.toString(), {credentials: 'include'});
+if (!response.ok) {
+throw new Error(Fetch received not OK response: ${response.status});
+}
+if (!response.headers.get('content-type')?.startsWith('text/plain')) {
+const blob = await response.blob();
+if (blob.size > 0 && blob.type.startsWith('image/')) {
+return blob;
+}
+throw new Error('Fetched blob is not a valid image.');
+}
+url = new URL(await response.text());
+}
+throw new Error('Exceeded maximum number of redirects.');
+}
+
+async function updateImageSourcesUsingAlr() {
+// Use Promise.all to handle all updates concurrently for better performance.
+await Promise.all(Array.from(document.querySelectorAll('img'), async (img) => {
+// Only proceed if the img tag has a valid 'src' attribute with a
+// googleusercontent URL.
+if (img.src && img.src.includes('googleusercontent')) {
+try {
+const blob = await fetchFifeImageBlobUsingAlr(img.src);
+// Create a new URL from the Blob and set it as the image's source.
+img.src = URL.createObjectURL(blob);
+} catch (error) {
+// Do nothing.
+}
+}
+}));
+}
+
+async function updateBackgroundImagesUsingAlr() {
+// Find all elements with a googleusercontent background image.
+const elementsToProcess =
+document.querySelectorAll('[style*="googleusercontent"]');
+const urlRegex = /url((['"]?)(https?://.?googleusercontent.?)\1)/;
+
+await Promise.all(Array.from(elementsToProcess, async (element) => {
+const backgroundImage = element.style.backgroundImage;
+const match = backgroundImage.match(urlRegex);
+
+if (match && match[2]) {
+const originalUrl = match[2];
+try {
+const blob = await fetchFifeImageBlobUsingAlr(originalUrl);
+const blobUrl = URL.createObjectURL(blob);
+
+// Directly update the element's style property.
+element.style.backgroundImage =
+backgroundImage.replace(originalUrl, blobUrl);
+} catch (error) {
+// Do nothing.
+}
+}
+}));
+}
+
+// --- SLIDESHOW LOGIC ---
+function initializeSlideshowUi() {
+const slides = document.querySelectorAll('.slide-container');
+const prevButton = document.getElementById('prev-slide');
+const nextButton = document.getElementById('next-slide');
+const slideCounter = document.getElementById('slide-counter');
+let currentSlide = 0;
+
+function updateUi() {
+slides.forEach((slide, index) => {
+slide.classList.toggle('active', index === currentSlide);
+});
+prevButton.disabled = currentSlide === 0;
+nextButton.disabled = currentSlide === slides.length - 1;
+slideCounter.textContent = Slide ${currentSlide + 1} of ${slides.length};
+}
+
+function showNextSlide() {
+if (currentSlide < slides.length - 1) {
+currentSlide++;
+updateUi();
+}
+}
+
+function showPrevSlide() {
+if (currentSlide > 0) {
+currentSlide--;
+updateUi();
+}
+}
+
+nextButton.addEventListener('click', showNextSlide);
+prevButton.addEventListener('click', showPrevSlide);
+document.addEventListener('keydown', (e) => {
+// Don't intercept arrow keys when the user is editing text.
+const el = e.target;
+if (el.isContentEditable || el.tagName === 'INPUT' ||
+el.tagName === 'TEXTAREA') {
+return;
+}
+if (e.key === 'ArrowRight') {
+showNextSlide();
+} else if (e.key === 'ArrowLeft') {
+showPrevSlide();
+}
+});
+
+const themeToggleBtn = document.getElementById('theme-toggle');
+const darkIcon = document.getElementById('theme-toggle-dark-icon');
+const lightIcon = document.getElementById('theme-toggle-light-icon');
+const htmlEl = document.documentElement;
+
+function setTheme(isDark) {
+htmlEl.classList.toggle('dark', isDark);
+darkIcon.classList.toggle('hidden', isDark);
+lightIcon.classList.toggle('hidden', !isDark);
+localStorage.setItem('color-theme', isDark ? 'dark' : 'light');
+}
+const isDarkMode = localStorage.getItem('color-theme') === 'dark' ||
+(!('color-theme' in localStorage) &&
+window.matchMedia('(prefers-color-scheme: dark)').matches);
+setTheme(isDarkMode);
+themeToggleBtn.addEventListener(
+'click', () => setTheme(!htmlEl.classList.contains('dark')));
+
+function updateScale() {
+const baseWidth = 1280;
+const baseHeight = 720;
+const slideshowWrapper = document.getElementById('slideshow-wrapper');
+const slideshowHolder = document.getElementById('slideshow-holder');
+
+// The available space is the dimensions of the holder div.
+const availableWidth = slideshowHolder.clientWidth;
+const availableHeight = slideshowHolder.clientHeight;
+
+// Calculate the scale ratio based on both width and height
+const scaleX = availableWidth / baseWidth;
+const scaleY = availableHeight / baseHeight;
+
+// Use the smaller of the two ratios to ensure it fits
+const finalScale = Math.min(scaleX, scaleY);
+
+slideshowWrapper.style.setProperty('--scale-factor', finalScale);
+}
+
+updateUi();
+updateScale();
+window.addEventListener('resize', updateScale);
+}
+
+document.addEventListener('DOMContentLoaded', async function() {
+await Promise.all(
+[updateImageSourcesUsingAlr(), updateBackgroundImagesUsingAlr()]);
+initializeSlideshowUi();
+});
+</script></body></html>
