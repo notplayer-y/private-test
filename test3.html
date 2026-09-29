@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>United States of Favorites - Civilization Presentation</title>
+    <style>
+        :root {
+            --primary-blue: #0b2545;
+            --accent-red: #c92a2a;
+            --gold: #d97706;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 90vh;
+        }
+
+        .presentation-container {
+            width: 100%;
+            max-width: 900px;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border: 2px solid #e2e8f0;
+            overflow: hidden;
+            padding: 40px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .slide {
+            display: none;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        .slide-header {
+            border-bottom: 3px solid var(--accent-red);
+            padding-bottom: 12px;
+            margin-bottom: 24px;
+        }
+
+        h1, h2 {
+            color: var(--primary-blue);
+            margin: 0 0 10px 0;
+        }
+
+        .placeholder {
+            background-color: #fef3c7;
+            color: #92400e;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            border: 1px dashed var(--gold);
+        }
+
+        .section-title {
+            color: var(--accent-red);
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 18px;
+            margin-bottom: 6px;
+        }
+
+        p, ul {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .controls {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        button {
+            background-color: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background-color: var(--accent-red);
+        }
+
+        button:disabled {
+            background-color: #cbd5e1;
+            cursor: not-allowed;
+        }
+
+        .slide-counter {
+            font-weight: bold;
+            color: var(--primary-blue);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="presentation-container">
+
+        <!-- SLIDE 1 -->
+        <div class="slide active" id="slide-1">
+            <div class="slide-header">
+                <h1>United States of Favorites</h1>
+                <p>Civilization Presentation Checklist</p>
+            </div>
+            <p><strong>Civilization Name:</strong> <span class="placeholder">[INSERT CIVILIZATION NAME HERE]</span></p>
+            <p><strong>Presenter:</strong> <span class="placeholder">[INSERT YOUR NAME HERE]</span></p>
+            <p><strong>Presentation Length:</strong> ~4 minutes</p>
+        </div>
+
+        <!-- SLIDE 2 -->
+        <div class="slide" id="slide-2">
+            <div class="slide-header">
+                <h2>1. Body of Water</h2>
+            </div>
+            <div class="section-title">Name of Body of Water:</div>
+            <p><span class="placeholder">[INSERT NAME OF BODY OF WATER HERE]</span></p>
+
+            <div class="section-title">Description:</div>
+            <p><span class="placeholder">[INSERT DESCRIPTION OF BODY OF WATER HERE]</span></p>
+        </div>
+
+        <!-- SLIDE 3 -->
+        <div class="slide" id="slide-3">
+            <div class="slide-header">
+                <h2>2. Physical Features</h2>
+            </div>
+            <ul>
+                <li><strong>1st Physical Feature:</strong> <span class="placeholder">[INSERT NAME & DESCRIPTION 1 HERE]</span></li>
+                <li><strong>2nd Physical Feature:</strong> <span class="placeholder">[INSERT NAME & DESCRIPTION 2 HERE]</span></li>
+                <li><strong>3rd Physical Feature:</strong> <span class="placeholder">[INSERT NAME & DESCRIPTION 3 HERE]</span></li>
+                <li><strong>4th Physical Feature:</strong> <span class="placeholder">[INSERT NAME & DESCRIPTION 4 HERE]</span></li>
+            </ul>
+        </div>
+
+        <!-- SLIDE 4 -->
+        <div class="slide" id="slide-4">
+            <div class="slide-header">
+                <h2>3. How Physical Features Help Us</h2>
+            </div>
+            <div class="section-title">Feature Help #1:</div>
+            <p><span class="placeholder">[INSERT HOW FEATURE 1 HELPS THE CIVILIZATION HERE]</span></p>
+
+            <div class="section-title">Feature Help #2:</div>
+            <p><span class="placeholder">[INSERT HOW FEATURE 2 HELPS THE CIVILIZATION HERE]</span></p>
+        </div>
+
+        <!-- SLIDE 5 -->
+        <div class="slide" id="slide-5">
+            <div class="slide-header">
+                <h2>4. Culture & Beliefs</h2>
+            </div>
+            <div class="section-title">Beliefs:</div>
+            <p><span class="placeholder">[INSERT DESCRIPTION OF BELIEFS HERE]</span></p>
+
+            <div class="section-title">Traditions:</div>
+            <p><span class="placeholder">[INSERT DESCRIPTION OF TRADITIONS HERE]</span></p>
+        </div>
+
+        <!-- SLIDE 6 -->
+        <div class="slide" id="slide-6">
+            <div class="slide-header">
+                <h2>5. Government & Programs</h2>
+            </div>
+            <div class="section-title">Government Type & Function:</div>
+            <p><span class="placeholder">[INSERT DESCRIPTION OF GOVERNMENT & HOW IT WORKS HERE]</span></p>
+
+            <div class="section-title">Government Programs:</div>
+            <p><span class="placeholder">[INSERT DESCRIPTION OF GOVERNMENT PROGRAMS HERE]</span></p>
+        </div>
+
+        <!-- SLIDE 7 -->
+        <div class="slide" id="slide-7">
+            <div class="slide-header">
+                <h2>6. Civilization Landmark</h2>
+            </div>
+            <div class="section-title">Landmark Name & Description:</div>
+            <p><span class="placeholder">[INSERT LANDMARK DESCRIPTION HERE]</span></p>
+
+            <div class="section-title">How It Became Famous:</div>
+            <p><span class="placeholder">[INSERT HOW LANDMARK BECAME FAMOUS HERE]</span></p>
+        </div>
+
+        <!-- SLIDE 8 -->
+        <div class="slide" id="slide-8">
+            <div class="slide-header">
+                <h2>7. Economy & Environment</h2>
+            </div>
+            <div class="section-title">Jobs & Their Importance:</div>
+            <p><span class="placeholder">[INSERT JOBS AND WHY THEY ARE IMPORTANT HERE]</span></p>
+
+            <div class="section-title">Environment Affects People:</div>
+            <p><span class="placeholder">[INSERT HOW ENVIRONMENT AFFECTS PEOPLE HERE]</span></p>
+
+            <div class="section-title">People Affect Environment:</div>
+            <p><span class="placeholder">[INSERT HOW PEOPLE AFFECT ENVIRONMENT HERE]</span></p>
+        </div>
+
+    </div>
+
+    <!-- CONTROLS -->
+    <div class="controls">
+        <button id="prevBtn" onclick="changeSlide(-1)" disabled>Previous</button>
+        <span class="slide-counter" id="slideCounter">Slide 1 of 8</span>
+        <button id="nextBtn" onclick="changeSlide(1)">Next</button>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 8;
+
+        function changeSlide(direction) {
+            document.getElementById(`slide-${currentSlide}`).classList.remove('active');
+            currentSlide += direction;
+            
+            if (currentSlide < 1) currentSlide = 1;
+            if (currentSlide > totalSlides) currentSlide = totalSlides;
+
+            document.getElementById(`slide-${currentSlide}`).classList.add('active');
+            document.getElementById('slideCounter').innerText = `Slide ${currentSlide} of ${totalSlides}`;
+
+            document.getElementById('prevBtn').disabled = (currentSlide === 1);
+            document.getElementById('nextBtn').disabled = (currentSlide === totalSlides);
+        }
+    </script>
+</body>
+</html>
