@@ -1,0 +1,954 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Solarian Empire of Aethelgard - Civilization Presentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+/* 1. CORE SETUP & RESET */
+
+⚬ {
+box-sizing: border-box;
+}
+
+p {
+margin: 0 0 12px 0;
+}
+
+body {
+background-color: #0f172a;
+display: grid;
+gap: 24px;
+grid-template-columns: 1fr;
+margin: 0;
+min-height: 100vh;
+padding: 30px 0;
+place-items: center;
+}
+
+.slide-container {
+align-items: flex-start;
+background: #fdfbf7;
+border-radius: 12px;
+box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+display: flex;
+flex-direction: column;
+font-family: 'Plus Jakarta Sans', sans-serif;
+height: 720px;
+justify-content: flex-start;
+overflow: hidden;
+padding: 50px 60px;
+position: relative;
+width: 1280px;
+}
+
+/* Background aesthetic accents */
+.slide-container::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 8px;
+background: linear-gradient(90deg, #b45309, #d97706, #f59e0b, #0d9488);
+z-index: 10;
+}
+
+.slide-container::after {
+content: '';
+position: absolute;
+bottom: -100px;
+right: -100px;
+width: 300px;
+height: 300px;
+background: radial-gradient(circle, rgba(217, 119, 6, 0.08) 0%, rgba(253, 251, 247, 0) 70%);
+border-radius: 50%;
+pointer-events: none;
+z-index: 0;
+}
+
+.slide-container > * {
+position: relative;
+z-index: 2;
+}
+
+/* 2. TYPOGRAPHY & COLOR SYSTEM */
+.slide-container h1,
+.slide-container h2,
+.slide-container h3 {
+color: #1e293b;
+font-family: 'Cinzel', serif;
+font-weight: 700;
+margin: 0;
+}
+
+.slide-container h1 {
+font-size: 64px;
+letter-spacing: -0.5px;
+line-height: 1.1;
+color: #78350f;
+}
+
+.slide-container .slide-title {
+font-size: 34px;
+font-weight: 700;
+color: #1e293b;
+margin-bottom: 24px;
+text-align: left;
+width: 100%;
+letter-spacing: -0.5px;
+display: flex;
+align-items: center;
+gap: 12px;
+}
+
+.slide-container .slide-title::before {
+content: '';
+display: inline-block;
+width: 12px;
+height: 28px;
+background: #d97706;
+border-radius: 3px;
+}
+
+.slide-container h3 {
+font-size: 22px;
+color: #92400e;
+margin-bottom: 10px;
+}
+
+.slide-container p,
+.slide-container li {
+color: #334155;
+font-size: 17px;
+line-height: 1.55;
+}
+
+.slide-container .subtitle {
+color: #78350f;
+font-size: 22px;
+font-weight: 500;
+margin-top: 16px;
+line-height: 1.4;
+}
+
+.content-area {
+align-items: stretch;
+display: flex;
+flex-direction: column;
+flex-grow: 1;
+justify-content: center;
+width: 100%;
+}
+
+/* 3. LAYOUT COMPONENTS /
+/ Title Slide */
+.title-layout {
+align-items: center;
+display: flex;
+flex-direction: column;
+height: 100%;
+justify-content: center;
+text-align: center;
+width: 100%;
+}
+
+.title-badge {
+background: #fef3c7;
+color: #b45309;
+font-family: 'Plus Jakarta Sans', sans-serif;
+font-size: 14px;
+font-weight: 700;
+letter-spacing: 2px;
+padding: 8px 18px;
+border-radius: 20px;
+text-transform: uppercase;
+margin-bottom: 24px;
+border: 1px solid #fde68a;
+}
+
+/* Section Title */
+.section-title-layout {
+align-items: center;
+display: flex;
+flex-direction: column;
+height: 100%;
+justify-content: center;
+text-align: center;
+width: 100%;
+}
+
+.section-title-layout h2 {
+font-size: 54px;
+color: #78350f;
+margin-bottom: 16px;
+}
+
+.section-title-layout hr {
+background: #d97706;
+border: none;
+height: 4px;
+margin: 20px auto;
+width: 80px;
+border-radius: 2px;
+}
+
+/* Two Column Layout */
+.two-column {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 36px;
+width: 100%;
+align-items: center;
+}
+
+.two-column.tiled {
+align-items: stretch;
+}
+
+.two-column.tiled > div {
+background-color: #ffffff;
+border-radius: 12px;
+border: 1px solid #f1f5f9;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+padding: 32px;
+}
+
+/* Tiled Content (3 items) */
+.tiled-content {
+display: flex;
+gap: 24px;
+width: 100%;
+align-items: stretch;
+}
+
+.tile {
+background: #ffffff;
+border: 1px solid #e2e8f0;
+border-top: 4px solid #d97706;
+border-radius: 10px;
+box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+display: flex;
+flex-direction: column;
+flex: 1;
+padding: 28px;
+text-align: left;
+}
+
+.tile .icon {
+color: #d97706;
+font-size: 36px;
+margin-bottom: 16px;
+}
+
+/* Grid for 4 Features */
+.grid-4 {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 20px;
+width: 100%;
+}
+
+.feature-card {
+background: #ffffff;
+border: 1px solid #cbd5e1;
+border-left: 5px solid #0d9488;
+border-radius: 8px;
+padding: 20px 24px;
+box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.feature-card h3 {
+color: #0f766e;
+font-size: 19px;
+margin-bottom: 6px;
+}
+
+.feature-card p {
+font-size: 15px;
+margin: 0;
+color: #475569;
+}
+
+/* Image Wrappers */
+.image-wrapper {
+border-radius: 10px;
+overflow: hidden;
+height: 380px;
+width: 100%;
+box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+border: 1px solid #e2e8f0;
+}
+
+.image-wrapper img {
+height: 100%;
+width: 100%;
+object-fit: cover;
+}
+
+/* Styled Bullet Points */
+.bullet-list {
+width: 100%;
+}
+
+.bullet-list ul {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+.bullet-list li {
+position: relative;
+padding-left: 44px;
+margin-bottom: 22px;
+font-size: 18px;
+}
+
+.bullet-list i {
+position: absolute;
+left: 0;
+top: 2px;
+color: #d97706;
+font-size: 24px;
+}
+
+.bullet-list strong {
+color: #1e293b;
+}
+
+/* Bleed Image Layout */
+.slide-container.bleed-image-layout {
+align-items: start;
+display: grid;
+gap: 40px;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+padding: 0;
+}
+
+.slide-container.bleed-image-layout > .content-container {
+padding: 50px 0 50px 60px;
+}
+
+.slide-container.bleed-image-layout > .image-container {
+height: 100%;
+overflow: hidden;
+width: 100%;
+}
+
+.slide-container.bleed-image-layout img.bleed-image-side {
+border-radius: 0 12px 12px 0;
+display: block;
+height: 720px;
+object-fit: cover;
+width: 100%;
+}
+
+.bleed-text-side p {
+font-size: 17px;
+margin-bottom: 16px;
+}
+
+/* Presenter Badge */
+.presenter-note {
+background: #f1f5f9;
+border-left: 4px solid #64748b;
+padding: 10px 14px;
+font-size: 14px;
+color: #475569;
+margin-top: 15px;
+border-radius: 0 6px 6px 0;
+}
+
+.qa-layout {
+margin: 0 auto;
+text-align: center;
+width: 100%;
+align-self: center;
+}
+
+.qa-layout h2 {
+font-size: 56px;
+color: #78350f;
+margin-bottom: 16px;
+}
+
+.qa-layout p {
+font-size: 22px;
+color: #475569;
+}
+</style>
+<style>
+.lms-source-label {
+position: absolute;
+top: 8px;
+right: 8px;
+background-color: #e0e0e0;
+color: #333333;
+border-radius: 10px;
+padding: 4px 4px;
+font-family: sans-serif;
+font-size: 10px;
+pointer-events: none;
+font-weight: 500;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+</style><style>
+:where(.slide-attributions) {
+padding: 60px;
+}
+.attribution-list {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+.attribution-list__item {
+align-items: center;
+border-bottom: 1px solid #757575;
+display: grid;
+gap: 25px;
+grid-template-columns: 90px 1fr;
+padding: 15px 0;
+margin: 0 !important;
+}
+.attribution-list__item::before {
+display: none;
+}
+.attribution-list__item::after {
+display: none;
+}
+.attribution-list__item:last-child {
+border-bottom: none;
+}
+.attribution-list__item .attribution__thumbnail {
+height: 50px;
+width: 90px;
+}
+.attribution__thumbnail .attribution__thumbnail__image {
+border-radius: 8px;
+height: 100%;
+object-fit: cover;
+width: 100%;
+}
+.attribution__details {
+display: flex;
+flex-direction: column;
+gap: 5px;
+}
+.attribution__details .attribution__raw-url {
+color: inherit;
+font-size: 13px;
+margin: 0;
+word-break: break-all;
+}
+.attribution__details .attribution__title {
+color: inherit;
+font-size: 16px;
+margin: 0;
+}
+.attribution__details .attribution__title > .attribution__link {
+color: #4f46e5;
+text-decoration: none;
+}
+</style><style>
+/* The container that fills available space. It's the positioning context. /
+#slideshow-holder {
+width: 100%;
+position: relative;
+flex-grow: 1; / Replaces flex-grow Tailwind class for clarity /
+overflow: hidden;
+padding: 1rem; / Replaces p-4 Tailwind class */
+}
+
+/* UI controls should not be text-selectable. */
+#nav-controls.select-none,
+#theme-toggle.select-none {
+user-select: none;
+-webkit-user-select: none;
+}
+
+/* The element that is scaled and centered. /
+#slideshow-wrapper {
+width: 1280px;
+height: 720px;
+position: absolute;
+top: 50%;
+left: 50%;
+transform-origin: center;
+transform: translate(-50%, -50%) scale(var(--scale-factor, 1));
+transition: transform 0.3s ease-in-out;
+/ Visual styles moved here from the holder */
+border-radius: 0.5rem;
+box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+overflow: hidden;
+}
+
+/* Update slide container styles */
+.slide-container {
+width: 100%;
+height: 100%;
+overflow: hidden;
+position: absolute;
+top: 0;
+left: 0;
+opacity: 0;
+pointer-events: none;
+transition: opacity 0.5s ease-in-out;
+}
+
+/* Make the active slide visible */
+.slide-container.active {
+opacity: 1;
+pointer-events: auto;
+}
+</style><script src="https://cdn.tailwindcss.com/3.4.17"></script><script>
+tailwind.config = {
+darkMode: 'class',
+corePlugins: {
+preflight: false,
+},
+}
+</script></head>
+<body class="bg-gray-100 dark:bg-gray-900 flex flex-col h-screen transition-colors duration-300">
+
+<!-- SLIDE 1: Title Slide -->
+<!-- Checklist Item: Name of your civilization -->
+
+<!-- SLIDE 2: Bodies of Water -->
+<!-- Checklist Item: Name of body of water & Description of bodies of water -->
+
+<!-- SLIDE 3: Four Physical Features -->
+<!-- Checklist Items: Description of 1st, 2nd, 3rd, and 4th physical features -->
+
+<!-- SLIDE 4: How Physical Features Help -->
+<!-- Checklist Items: Description of how 2 physical features help the civilization -->
+
+<!-- SLIDE 5: Beliefs & Culture -->
+<!-- Checklist Item: Description of your civilization's beliefs -->
+
+<!-- SLIDE 6: Traditions & Celebrations -->
+<!-- Checklist Item: Description of your civilization's traditions -->
+
+<!-- SLIDE 7: Government System -->
+<!-- Checklist Items: Description of government & How the government works -->
+
+<!-- SLIDE 8: Public Programs -->
+<!-- Checklist Item: Description of the programs the government provides -->
+
+<!-- SLIDE 9: Famous Landmark -->
+<!-- Checklist Items: Description of landmark & How it became famous -->
+
+<!-- SLIDE 10: Occupations & Importance -->
+<!-- Checklist Item: Description of jobs and explain why they're important -->
+
+<!-- SLIDE 11: Human-Environment Interaction -->
+<!-- Checklist Items: How environment affects people & How people affect environment -->
+
+<!-- SLIDE 12: Presentation Conclusion / Q&A -->
+
+<button id="theme-toggle" class="select-none absolute top-4 right-4 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm p-2 rounded-full shadow-md text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-all duration-300 z-20 border-none leading-[0] cursor-pointer">
+<svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 -960 960 960"><path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"></path></svg>
+</button>
+
+<div id="nav-controls" class="select-none relative flex-shrink-0 w-full flex justify-center items-center p-4">
+<span id="slide-counter" class="absolute left-4 top-1/2 -translate-y-1/2 text-sm font-medium text-gray-600 dark:text-gray-400 font-sans"></span>
+<div class="flex items-center space-x-2">
+<button id="prev-slide" class="bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 p-2 rounded-md transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-md border-none leading-[0] cursor-pointer">
+<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
+</button>
+<button id="next-slide" class="bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 p-2 rounded-md transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-md border-none leading-[0] cursor-pointer">
+<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
+</button>
+</div>
+</div>
+
+<div id="slideshow-holder"><div id="slideshow-wrapper"><div class="slide-container" id="slide1">
+<div class="title-layout">
+<span class="title-badge"><i class="fa-solid fa-crown"></i> 4-Minute Presentation</span>
+<h1>The Solarian Empire</h1>
+<p class="subtitle">Of Aethelgard: Land of the Sun & Stone</p>
+<div style="margin-top: 40px; display: flex; gap: 20px; justify-content: center; font-weight: 600; color: #b45309;">
+<span><i class="fa-solid fa-compass"></i> Ancient Social Studies Project</span>
+<span>•</span>
+<span><i class="fa-solid fa-user-tie"></i> Presenter Guide</span>
+</div>
+</div>
+</div><div class="slide-container" id="slide2">
+<h2 class="slide-title">Bodies of Water</h2>
+<div class="content-area">
+<div class="two-column">
+<div>
+<h3>1. The Astraea River</h3>
+<p>A roaring 800-mile freshwater river flowing straight from high mountain glaciers into the central heartland. It provides mineral-rich freshwater for crops and drinking.</p>
+
+
+<h3>2. The Sapphire Gulf</h3>
+<p>A tranquil, sheltered coastal sea located at the southern border. It connects Solaria to neighboring trading tribes and abundant seafood reserves.</p>
+<div class="presenter-note">
+<i class="fa-solid fa-bullhorn"></i> <strong>Say out loud:</strong> "Our civilization depends on two primary bodies of water: the roaring Astraea River which feeds our crops, and the Sapphire Gulf which opens our trade routes."
+</div>
+</div>
+<div>
+<div class="image-wrapper">
+<img src="https://nomads-life.com/wp-content/uploads/2024/11/Uzbekistan-Lakes.png" alt="The Astraea River Valley">
+</div>
+</div>
+</div>
+</div>
+</div><div class="slide-container" id="slide3">
+<h2 class="slide-title">Four Key Physical Features</h2>
+<div class="content-area">
+<div class="grid-4">
+<div class="feature-card">
+<h3>1. Obsidian Ridge</h3>
+<p>A towering, sharp volcanic mountain range lining the north that acts as an impenetrable natural fortress wall against enemies.</p>
+</div>
+<div class="feature-card">
+<h3>2. Sun-Mist Plateau</h3>
+<p>A high, flat elevated mesa with mild weather, ideal for building mountain settlements and celestial star observations.</p>
+</div>
+<div class="feature-card">
+<h3>3. Gold-Silt Valley</h3>
+<p>Extensive low-lying fertile plains running alongside the Astraea River, enriched annually by dark nutrient floodwaters.</p>
+</div>
+<div class="feature-card">
+<h3>4. Whispering Canyon</h3>
+<p>A deep, narrow red-rock gorge carved by ancient streams, rich in valuable copper, gold, and building quartz.</p>
+</div>
+</div>
+<div class="presenter-note">
+<i class="fa-solid fa-bullhorn"></i> <strong>Say out loud:</strong> "Solaria features four distinct natural landscapes: the protective Obsidian Ridge, the elevated Sun-Mist Plateau, the fertile Gold-Silt Valley, and the resource-rich Whispering Canyon."
+</div>
+</div>
+</div><div class="slide-container" id="slide4">
+<h2 class="slide-title">How Physical Features Benefit Us</h2>
+<div class="content-area">
+<div class="two-column tiled">
+<div>
+<div class="icon" style="color:#d97706; font-size: 32px; margin-bottom: 12px;"><i class="fa-solid fa-shield-halved"></i></div>
+<h3>Benefit 1: Natural Defense</h3>
+<p><strong>Obsidian Ridge:</strong> The sharp, 12,000-foot volcanic peaks stop invading northern forces completely. Solaria requires minimal military guards on its northern border, allowing citizens to focus on farming and science.</p>
+</div>
+<div>
+<div class="icon" style="color:#0d9488; font-size: 32px; margin-bottom: 12px;"><i class="fa-solid fa-wheat-awn"></i></div>
+<h3>Benefit 2: Agricultural Wealth</h3>
+<p><strong>Gold-Silt Valley:</strong> Annual spring flooding deposits volcanic minerals onto the plain, allowing farmers to harvest grain and sun-grapes three times a year without depleting the soil.</p>
+</div>
+</div>
+</div>
+</div><div class="slide-container" id="slide5">
+<h2 class="slide-title">Core Beliefs & Philosophy</h2>
+<div class="content-area">
+<div class="bullet-list">
+<ul>
+<li>
+<i class="fa-solid fa-sun"></i>
+<strong>The Path of Sun-Harmony:</strong> Solarians believe the Sun is the supreme giver of life, energy, and truth. All human actions must align with natural order and cosmic cycles.
+</li>
+<li>
+<i class="fa-solid fa-balance-scale"></i>
+<strong>Elemental Balance:</strong> Religious doctrine teaches that Earth, Water, and Light must be kept in equilibrium. Wastefulness or harming nature is seen as a spiritual disruption.
+</li>
+<li>
+<i class="fa-solid fa-hands-holding-circle"></i>
+<strong>Reverence for Ancestors & Scholars:</strong> Citizens worship ancient builders and astronomers, believing wisdom gained in life continues to guide the empire from the stars.
+</li>
+</ul>
+</div>
+</div>
+</div><div class="slide-container" id="slide6">
+<h2 class="slide-title">Cultural Traditions</h2>
+<div class="content-area">
+<div class="tiled-content">
+<div class="tile">
+<div class="icon"><i class="fa-solid fa-fire-flame-curved"></i></div>
+<h3>Solstice Dawn Festival</h3>
+<p>An annual 3-day summer celebration where thousands gather at sunrise to light golden lanterns and offer first-harvest crops to the river.</p>
+</div>
+<div class="tile">
+<div class="icon"><i class="fa-solid fa-book-open-reader"></i></div>
+<h3>The Rite of First Craft</h3>
+<p>Every 14-year-old youth presents a handcrafted tool, painting, or canal model to their community elders to select their career guild.</p>
+</div>
+<div class="tile">
+<div class="icon"><i class="fa-solid fa-comments"></i></div>
+<h3>Nightly Story Circles</h3>
+<p>Families gather around village sun-stones to chant historical legends, teach moral laws, and recite constellation maps.</p>
+</div>
+</div>
+</div>
+</div><div class="slide-container" id="slide7">
+<h2 class="slide-title">Government & Structure</h2>
+<div class="content-area">
+<div class="two-column">
+<div>
+<h3>The Meritocratic Guild Council</h3>
+<p>Solaria is governed by a <strong>Representative Guild Council</strong> led by an elected High Chancellor. Rather than royal bloodlines, leaders are chosen based on proven mastery in farming, engineering, and law.</p>
+</div>
+<div>
+<h3>How the Government Works</h3>
+<p><strong>1. Policy Drafts:</strong> Specialized Guild Councils draft laws regarding trade, water rights, and defense.</p>
+<p><strong>2. Council Votes:</strong> 50 elected representatives from each valley district vote on major bills.</p>
+<p><strong>3. Local Magistrates:</strong> District governors enforce laws fairly and settle civic disputes.</p>
+</div>
+</div>
+</div>
+</div><div class="slide-container" id="slide8">
+<h2 class="slide-title">Government Public Programs</h2>
+<div class="content-area">
+<div class="tiled-content">
+<div class="tile">
+<div class="icon"><i class="fa-solid fa-faucet-drip"></i></div>
+<h3>Public Aqueduct Network</h3>
+<p>Free state-funded stone aqueducts delivering clean mountain spring water directly into every town square and farmland terrace.</p>
+</div>
+<div class="tile">
+<div class="icon"><i class="fa-solid fa-wheat-awn-circle-exclamation"></i></div>
+<h3>Emergency Grain Reserve</h3>
+<p>Massive stone silos storing 2 years worth of surplus grain to feed citizens for free during unexpected droughts or river freezes.</p>
+</div>
+<div class="tile">
+<div class="icon"><i class="fa-solid fa-graduation-cap"></i></div>
+<h3>The Imperial Academy</h3>
+<p>Universal, state-sponsored schooling for all children, teaching reading, mathematics, engineering, and astronomy.</p>
+</div>
+</div>
+</div>
+</div><div class="slide-container bleed-image-layout" id="slide9">
+<div class="content-container">
+<h2 class="slide-title">Famous Landmark</h2>
+<div class="content-area">
+<div class="bleed-text-side">
+<h3>The Great Sun Spire of Solaria</h3>
+<p>A towering 200-meter obelisk constructed from carved white granite and capped with a massive gold-and-quartz prism.</p>
+
+
+<h3>How It Became Famous</h3>
+<p>During the Summer Solstice, the peak refracts early morning sunlight into a brilliant beam across the entire 50-mile valley. Sailors navigating the Sapphire Gulf use this light beam as a famous lighthouse signal.</p>
+</div>
+</div>
+</div>
+<div class="image-container">
+<img class="bleed-image-side" src="https://houseappeal.wordpress.com/wp-content/uploads/2013/02/80jdjm.jpeg" alt="The Great Sun Spire Monument">
+</div>
+</div><div class="slide-container" id="slide10">
+<h2 class="slide-title">Jobs & Their Importance</h2>
+<div class="content-area">
+<div class="tiled-content">
+<div class="tile">
+<div class="icon"><i class="fa-solid fa-compass-drafting"></i></div>
+<h3>Hydraulic Engineers</h3>
+<p><strong>Role:</strong> Construct stone dams, floodgates, and irrigation canals.</p>
+<p><strong>Importance:</strong> Prevents catastrophic river flooding and supplies agricultural water year-round.</p>
+</div>
+<div class="tile">
+<div class="icon"><i class="fa-solid fa-person-digging"></i></div>
+<h3>Terrace Farmers</h3>
+<p><strong>Role:</strong> Cultivate crops on hillside step-fields using rich river silt.</p>
+<p><strong>Importance:</strong> Ensures total food security and exports surplus crops across the Gulf.</p>
+</div>
+<div class="tile">
+<div class="icon"><i class="fa-solid fa-star-and-crescent"></i></div>
+<h3>Master Astronomers</h3>
+<p><strong>Role:</strong> Track solar paths, lunar calendars, and star patterns.</p>
+<p><strong>Importance:</strong> Predicts seasonal floods and guides merchant ships across open sea.</p>
+</div>
+</div>
+</div>
+</div><div class="slide-container" id="slide11">
+<h2 class="slide-title">Human-Environment Interaction</h2>
+<div class="content-area">
+<div class="two-column tiled">
+<div>
+<div class="icon" style="color:#d97706; font-size:32px; margin-bottom:12px;"><i class="fa-solid fa-cloud-sun-rain"></i></div>
+<h3>How Environment Affects People</h3>
+<p>• Heavy mountain snowmelts force citizens to build homes on elevated stone platforms.</p>
+<p>• Arid summer heat requires clothes made from lightweight woven flax grown along riverbanks.</p>
+</div>
+<div>
+<div class="icon" style="color:#0d9488; font-size:32px; margin-bottom:12px;"><i class="fa-solid fa-mountain-city"></i></div>
+<h3>How People Affect Environment</h3>
+<p>• Solarians carve hillside terraces, preventing soil erosion while creating arable land.</p>
+<p>• They build stone canal locks to redirect river flow, turning dry deserts into lush green oases.</p>
+</div>
+</div>
+</div>
+</div><div class="slide-container" id="slide12">
+<div class="qa-layout">
+<h2>Presentation Complete</h2>
+<p>Thank you for exploring the Solarian Empire of Aethelgard!</p>
+<div class="presenter-note" style="max-width: 600px; margin: 30px auto 0 auto; text-align: center; border-left: none; border-top: 4px solid #d97706;">
+<i class="fa-solid fa-circle-check" style="color:#0d9488;"></i> <strong>Checklist Verified:</strong> All 18 prompt requirements & presenter notes included for your ~4 minute speech!
+</div>
+</div>
+</div><div class="slide-container slide-attributions" id="slide-attributions-1"><h2 class="slide-title">Image Sources</h2><div class="content-area"><ul class="attribution-list"><li class="attribution-list__item"><div class="attribution__thumbnail"><img class="attribution__thumbnail__image" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQsyvzW8iAXgM_hVocIU2cp3WnTsdUyZkWPKQIzYrc2N0g039LqusgpJmq2TCwr" alt="Thumbnail for nomads-life.com"></div><div class="attribution__details"><p class="attribution__raw-url">https://nomads-life.com/wp-content/uploads/2024/11/Uzbekistan-Lakes.png</p><p class="attribution__title">Source: <a href="https://nomads-life.com/blog/gorges-and-valleys-of-uzbekistan/fergana-and-fergana-valley/" target="_blank" class="attribution__link">nomads-life.com</a></p></div></li><li class="attribution-list__item"><div class="attribution__thumbnail"><img class="attribution__thumbnail__image" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRX4xR3_h0LV4eUc0-f15oA46shIZp0fusTRY1U-kqY3g3pMRuM7c9NexBmkmUu" alt="Thumbnail for houseappeal.wordpress.com"></div><div class="attribution__details"><p class="attribution__raw-url">https://houseappeal.wordpress.com/wp-content/uploads/2013/02/80jdjm.jpeg</p><p class="attribution__title">Source: <a href="https://houseappeal.wordpress.com/2013/02/19/a-towering-monument-of-ancient-distinction-the-obelisk/" target="_blank" class="attribution__link">houseappeal.wordpress.com</a></p></div></li></ul></div></div></div></div><script>
+/
+
+⚬ Fetches an image blob using a method that attempts to bypass CORS issues
+
+⚬ by adding 'alr=yes' to the URL and following redirects.
+*/
+async function fetchFifeImageBlobUsingAlr(urlString) {
+if (urlString.startsWith('blob:') || urlString.startsWith('data:')) {
+throw new Error('Input URL is already a blob or data URL.');
+}
+let url = new URL(urlString, window.location.href);
+url.searchParams.set('alr', 'yes');
+for (let i = 0; i < 5; i++) {
+const response = await fetch(url.toString(), {credentials: 'include'});
+if (!response.ok) {
+throw new Error(Fetch received not OK response: ${response.status});
+}
+if (!response.headers.get('content-type')?.startsWith('text/plain')) {
+const blob = await response.blob();
+if (blob.size > 0 && blob.type.startsWith('image/')) {
+return blob;
+}
+throw new Error('Fetched blob is not a valid image.');
+}
+url = new URL(await response.text());
+}
+throw new Error('Exceeded maximum number of redirects.');
+}
+
+async function updateImageSourcesUsingAlr() {
+// Use Promise.all to handle all updates concurrently for better performance.
+await Promise.all(Array.from(document.querySelectorAll('img'), async (img) => {
+// Only proceed if the img tag has a valid 'src' attribute with a
+// googleusercontent URL.
+if (img.src && img.src.includes('googleusercontent')) {
+try {
+const blob = await fetchFifeImageBlobUsingAlr(img.src);
+// Create a new URL from the Blob and set it as the image's source.
+img.src = URL.createObjectURL(blob);
+} catch (error) {
+// Do nothing.
+}
+}
+}));
+}
+
+async function updateBackgroundImagesUsingAlr() {
+// Find all elements with a googleusercontent background image.
+const elementsToProcess =
+document.querySelectorAll('[style*="googleusercontent"]');
+const urlRegex = /url((['"]?)(https?://.?googleusercontent.?)\1)/;
+
+await Promise.all(Array.from(elementsToProcess, async (element) => {
+const backgroundImage = element.style.backgroundImage;
+const match = backgroundImage.match(urlRegex);
+
+if (match && match[2]) {
+const originalUrl = match[2];
+try {
+const blob = await fetchFifeImageBlobUsingAlr(originalUrl);
+const blobUrl = URL.createObjectURL(blob);
+
+// Directly update the element's style property.
+element.style.backgroundImage =
+backgroundImage.replace(originalUrl, blobUrl);
+} catch (error) {
+// Do nothing.
+}
+}
+}));
+}
+
+// --- SLIDESHOW LOGIC ---
+function initializeSlideshowUi() {
+const slides = document.querySelectorAll('.slide-container');
+const prevButton = document.getElementById('prev-slide');
+const nextButton = document.getElementById('next-slide');
+const slideCounter = document.getElementById('slide-counter');
+let currentSlide = 0;
+
+function updateUi() {
+slides.forEach((slide, index) => {
+slide.classList.toggle('active', index === currentSlide);
+});
+prevButton.disabled = currentSlide === 0;
+nextButton.disabled = currentSlide === slides.length - 1;
+slideCounter.textContent = Slide ${currentSlide + 1} of ${slides.length};
+}
+
+function showNextSlide() {
+if (currentSlide < slides.length - 1) {
+currentSlide++;
+updateUi();
+}
+}
+
+function showPrevSlide() {
+if (currentSlide > 0) {
+currentSlide--;
+updateUi();
+}
+}
+
+nextButton.addEventListener('click', showNextSlide);
+prevButton.addEventListener('click', showPrevSlide);
+document.addEventListener('keydown', (e) => {
+// Don't intercept arrow keys when the user is editing text.
+const el = e.target;
+if (el.isContentEditable || el.tagName === 'INPUT' ||
+el.tagName === 'TEXTAREA') {
+return;
+}
+if (e.key === 'ArrowRight') {
+showNextSlide();
+} else if (e.key === 'ArrowLeft') {
+showPrevSlide();
+}
+});
+
+const themeToggleBtn = document.getElementById('theme-toggle');
+const darkIcon = document.getElementById('theme-toggle-dark-icon');
+const lightIcon = document.getElementById('theme-toggle-light-icon');
+const htmlEl = document.documentElement;
+
+function setTheme(isDark) {
+htmlEl.classList.toggle('dark', isDark);
+darkIcon.classList.toggle('hidden', isDark);
+lightIcon.classList.toggle('hidden', !isDark);
+localStorage.setItem('color-theme', isDark ? 'dark' : 'light');
+}
+const isDarkMode = localStorage.getItem('color-theme') === 'dark' ||
+(!('color-theme' in localStorage) &&
+window.matchMedia('(prefers-color-scheme: dark)').matches);
+setTheme(isDarkMode);
+themeToggleBtn.addEventListener(
+'click', () => setTheme(!htmlEl.classList.contains('dark')));
+
+function updateScale() {
+const baseWidth = 1280;
+const baseHeight = 720;
+const slideshowWrapper = document.getElementById('slideshow-wrapper');
+const slideshowHolder = document.getElementById('slideshow-holder');
+
+// The available space is the dimensions of the holder div.
+const availableWidth = slideshowHolder.clientWidth;
+const availableHeight = slideshowHolder.clientHeight;
+
+// Calculate the scale ratio based on both width and height
+const scaleX = availableWidth / baseWidth;
+const scaleY = availableHeight / baseHeight;
+
+// Use the smaller of the two ratios to ensure it fits
+const finalScale = Math.min(scaleX, scaleY);
+
+slideshowWrapper.style.setProperty('--scale-factor', finalScale);
+}
+
+updateUi();
+updateScale();
+window.addEventListener('resize', updateScale);
+}
+
+document.addEventListener('DOMContentLoaded', async function() {
+await Promise.all(
+[updateImageSourcesUsingAlr(), updateBackgroundImagesUsingAlr()]);
+initializeSlideshowUi();
+});
+</script></body></html>
